@@ -8,7 +8,7 @@
     <title>Contato</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        body { background-color: crimson;}
+        body { background-color: rgb(20, 203, 220);}
     </style>
 </head>
 
@@ -31,15 +31,22 @@
     
         <div class="p-30">
             <form class="form-flex">
+
                 <h1>fala comigo!</h1>
+
                 <label for="nome">Nome:</label>
-                <input class="mb-10" type="text" name="nome" id="nome">
-                <label for="zap">zap:</label>
-                <input class="mb-10" type="zap" name="zap" id="zap">
+                <input class="text" type="text" name="nome" id="nome"
+                onkeyup="validanome()">
+                <div class = "mb-10 text-red" id="erroNome"></div>
+
+                <label for="email">email:</label>
+                <input class="mb-10" type="email" name="email" id="email"  onkeyup="validaEmail()">
+                <div class = "mb-10 text-red" id="erroEmail"></div>
+
                 <label for="dígite suas informações">dígite suas infomações:</label>
-                <textarea class="mb-10" name="dígite suas informações" id="dígite suas informações" cols="50" rows="10"></textarea>
-                
-                <button class="tm-btn">envie suas informações para o bradock</button>
+                <textarea class="mb-10" name="assunto" id="assunto" cols="50" rows="10" onkeyup="validaAssunto()"></textarea> 
+                <div class = "mb-10 text-red" id="erroAssunto" ></div>
+                <button class="tm-btn" onclick="enviar()">envie suas informações para o bradock</button>
             </form>
         </div>
 
@@ -52,7 +59,8 @@
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14689.205087745204!2d-43.481083092187504!3d-23.01270789999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bdd49fc6cf7b7%3A0x24177175aa724d57!2sCondom%C3%ADnio%20do%20Centro%20Comercial%20Time%20Center%20Recreio!5e0!3m2!1spt-BR!2sbr!4v1668097139969!5m2!1spt-BR!2sbr" 
                 width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                referrerpolicy="no-referrer-when-downgrade" onkeyup="mapaZoom" 	></iframe>
+                <div class ="" onmouseover="mapaZoom" onMouseOut ="mapaNormal" ></div>
 
         </div>
     </div>
@@ -76,6 +84,7 @@
         Mais que todos os direitos reservados &copy
 
     </footer>
+    <script src="assets/js/script.js"></script>
 
 </body>
 
